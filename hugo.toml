@@ -1,0 +1,60 @@
+baseURL = "https://blog.genericerror.xyz/"
+languageCode = "en-us"
+title = "GENERIC_ERROR_[B]LOG"
+theme = "generic_theme"
+disableKinds = ["taxonomy", "term"]
+
+[pagination]
+    # pagerSize = 5
+    pagerSize = 2
+    path = "articles"
+
+[menus]
+    [[menus.main]]
+        name = "ARTICLES"
+        pageRef = "/articles"
+        weight = 10
+
+    [[menus.main]]
+        name = "ABOUT"
+        pageRef = "/about"
+        weight = 20
+
+    [[menus.main]]
+        name = "WEBSITE"
+        url = "https://genericerror.xyz"
+        weight = 30
+
+    [[menus.main]]
+        name = "SOCIAL"
+        url = "https://www.instagram.com/generic_error/"
+        weight = 40
+
+[markup]
+    [markup.goldmark]
+        [markup.goldmark.parser]
+        [markup.goldmark.parser.attribute]
+            block = true
+            title = true
+
+[privacy]
+    [privacy.disqus]
+        disable = true
+    [privacy.googleAnalytics]
+        disable = true
+        respectDoNotTrack = true
+    [privacy.instagram]
+        disable = true
+        simple = false
+    [privacy.vimeo]
+        disable = true
+        enableDNT = true
+        simple = false
+    [privacy.x]
+        disable = true
+        enableDNT = true
+        simple = false
+
+    [privacy.youtube]
+        disable = true
+        privacyEnhanced = true

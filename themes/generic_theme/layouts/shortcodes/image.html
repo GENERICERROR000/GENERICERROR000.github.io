@@ -1,0 +1,29 @@
+
+{{/*  ref solution: https://adityatelange.in/blog/hugo-image-zoom-in/  */}}
+
+{{/*  generate a unique id for each image  */}}
+{{- $random := (substr (md5 .Params.src) 0 5) }}
+
+<div class="image-wrapper">
+    <input type="checkbox" id="zoomCheck-{{ $random }}" hidden>
+    <label for="zoomCheck-{{ $random }}">
+        <img 
+            class="image zoomCheck" 
+            loading="lazy" 
+            decoding="async" 
+            src="{{ .Get "src" }}"
+            alt="{{ .Get "alt" }}" 
+            title="{{ .Get "title" }}" 
+        />
+        <img
+            class="show" 
+            display="none"
+            loading="lazy" 
+            decoding="async" 
+            src="{{ .Get "src" }}"
+            alt="{{ .Get "alt" }}" 
+            title="{{ .Get "title" }}" 
+        />
+        <div class="shadow"></div>
+    </label>
+</div>

@@ -1,0 +1,275 @@
+/* ---> VARS <--- */
+
+:root {
+    --white: #cdcdcd;
+    --black: #171717; /* section background color */
+    --pink: #ff94d1; /* border */
+    --green: #80f59d; /* selected page color */
+    --text: #cdbeb1; /* text color */
+    --hover: #fc4040; /* hover color */
+    --shadow: #000000d8; /* bg for zoomed images */
+}
+
+/* ---> GENERAL <--- */
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html,
+a {
+    cursor: none !important;
+    /* cursor: url("/images/pointer.svg"), auto; */
+}
+
+body {
+    min-height: 96.5vh;
+    display: grid;
+    padding: 10px;
+
+    color: var(--text);
+    background-color: var(--black);
+    border: ridge;
+    border-width: thick;
+    border-color: var(--pink);
+
+    font-family: "Fira Code";
+    font-style: normal;
+    line-height: 1.2;
+
+    grid-template-columns: repeat(2, fit-content(400px)) repeat(3, 1fr);
+    grid-template-rows: repeat(2, fit-content(300px)) repeat(3, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    grid-template-areas:
+        "head head main main main"
+        "head head main main main"
+        ".    .    main main main"
+        ".    .    main main main"
+        ".    .    main main main";
+}
+
+code {
+    font-family: "Fira Code", monospace;
+}
+
+@supports (font-variation-settings: normal) {
+    code {
+        font-family: "Fira Code VF", monospace;
+    }
+}
+
+header {
+    grid-area: head;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    padding: 10px;
+    border: ridge;
+    border-width: thick;
+    border-color: var(--pink);
+}
+
+main {
+    grid-area: main;
+    max-width: 1200px;
+    padding: 10px;
+    font-size: 1rem;
+    font-weight: 400;
+    border: ridge;
+    border-width: thick;
+    border-color: var(--pink);
+}
+
+a {
+    color: var(--text);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--hover);
+}
+
+h1 {
+    margin: 0;
+    font-weight: 400;
+    font-size: 1.8rem;
+}
+
+h2 {
+    /* text-decoration-line: underline overline;
+    text-decoration-style: dotted;
+    text-decoration-thickness: .4rem;
+    text-decoration-thickness: 1000rem;
+    text-decoration-color: #ff94d125; */
+}
+
+main h2 a {
+    text-decoration-style: double;
+    text-decoration-line: underline;
+    text-decoration-thickness: 0.2rem;
+}
+
+/* ---> CURSOR <--- */
+
+.pointer {
+    display: none;
+    position: fixed;
+    margin-top: 0.5rem;
+    margin-left: -1.8rem;
+    font-size: 40px;
+    transform: rotateX(180deg);
+    rotate: -110deg;
+    z-index: 1000;
+    pointer-events: none;
+    filter: brightness(100);
+}
+
+/* ---> MENU <--- */
+
+.site-logo {
+    padding-bottom: 20px;
+}
+
+.active {
+    color: var(--green);
+}
+
+nav {
+    margin-top: 20px;
+}
+
+.nav {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+.copyright {
+    margin-top: 50px;
+    color: var(--text);
+    font-size: 0.8rem;
+}
+
+/* ---> PAGES <--- */
+
+main .button a {
+    text-decoration: none;
+}
+
+time {
+    font-style: italic;
+    font-size: 1rem;
+}
+
+.section {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 10px;
+    border: ridge;
+    border-width: thick;
+    border-color: var(--pink);
+}
+
+.section h2 {
+    margin-bottom: 10px;
+}
+
+.section p {
+    margin-top: 20px;
+}
+
+.page {
+    position: relative;
+    height: 100%;
+}
+
+.page h1 {
+    margin-bottom: 10px;
+}
+
+.page p {
+    margin-top: 20px;
+}
+
+.page p a {
+    color: var(--pink);
+}
+
+.credits {
+    position: absolute;
+    bottom: 0;
+}
+
+/* ---> MOBILE <--- */
+
+@media only screen and (max-width: 1000px) {
+    body {
+        min-width: 500px;
+        grid-template-columns: 1fr;
+        grid-column-gap: 0px;
+        grid-row-gap: 0px;
+        grid-template-areas:
+            "head"
+            "head"
+            "main"
+            "main"
+            "main";
+    }
+
+    header {
+        margin-right: 0px;
+    }
+
+    .copyright {
+        margin-top: 20px;
+    }
+}
+
+/* ---> IMAGES <--- */
+
+.headshot img {
+    max-width: 200px;
+}
+
+.image {
+    max-width: 400px;
+}
+
+.image-wrapper img.zoomCheck {
+    z-index: 900;
+    cursor: zoom-in;
+}
+
+.image-wrapper .show,
+.image-wrapper .shadow {
+    display: none;
+}
+
+.image-wrapper input[type="checkbox"]:checked ~ label > .show {
+    display: block;
+    transform: translate(-50%, -50%) scale(1.6);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    cursor: zoom-out;
+    z-index: 920;
+}
+
+.image-wrapper input[type="checkbox"]:checked ~ label > .shadow {
+    display: block;
+    transform: translate(-50%, -50%);
+    cursor: zoom-out;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    z-index: 910;
+}
+
+.shadow {
+    display: none;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background: var(--shadow);
+}
