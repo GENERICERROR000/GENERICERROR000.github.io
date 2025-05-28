@@ -37,6 +37,11 @@ disableKinds = ["taxonomy", "term"]
             block = true
             title = true
 
+# for github pages
+[caches]
+    [caches.images]
+        dir = ':cacheDir/images'
+
 [privacy]
     [privacy.disqus]
         disable = true
