@@ -244,7 +244,7 @@ time {
     max-width: 400px;
 }
 
-.image-wrapper img.zoomCheck {
+.image-wrapper img.zoom {
     z-index: 900;
     cursor: zoom-in;
 }

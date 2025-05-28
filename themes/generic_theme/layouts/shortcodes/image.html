@@ -5,10 +5,10 @@
 {{- $random := (substr (md5 .Params.src) 0 5) }}
 
 <div class="image-wrapper">
-    <input type="checkbox" id="zoomCheck-{{ $random }}" hidden>
-    <label for="zoomCheck-{{ $random }}">
+    <input type="checkbox" id="zoom-{{ $random }}" hidden>
+    <label for="zoom-{{ $random }}">
         <img 
-            class="image zoomCheck" 
+            class="image zoom pointer-hide" 
             loading="lazy" 
             decoding="async" 
             src="{{ .Get "src" }}"
@@ -16,7 +16,7 @@
             title="{{ .Get "title" }}" 
         />
         <img
-            class="show" 
+            class="show pointer-hide" 
             display="none"
             loading="lazy" 
             decoding="async" 
@@ -24,6 +24,6 @@
             alt="{{ .Get "alt" }}" 
             title="{{ .Get "title" }}" 
         />
-        <div class="shadow"></div>
+        <div class="shadow pointer-hide"></div>
     </label>
 </div>

@@ -72,29 +72,13 @@ function handlePointer() {
             }
         });
 
-        document.querySelectorAll(".image").forEach((el) => {
+        document.querySelectorAll(".pointer-hide").forEach((el) => {
             el.addEventListener("mouseenter", () => {
                 const pointer = document.getElementsByClassName("pointer")[0];
                 if (pointer) {
                     pointer.style.visibility = "hidden";
                     pointer.style.hidden = "true";
                 }
-            });
-
-            el.addEventListener("mouseleave", () => {
-                const pointer = document.getElementsByClassName("pointer")[0];
-                if (pointer) {
-                    pointer.style.visibility = "visible";
-                    pointer.style.hidden = "false";
-                }
-            });
-        });
-
-        document.querySelectorAll("iframe").forEach((el) => {
-            el.addEventListener("mouseenter", () => {
-                const pointer = document.getElementsByClassName("pointer")[0];
-                if (pointer) pointer.style.visibility = "hidden";
-                if (pointer) pointer.style.hidden = "true";
             });
 
             el.addEventListener("mouseleave", () => {
