@@ -1,8 +1,7 @@
 +++
 date = '2025-05-27T14:36:05-04:00'
 title = 'there is work to be done'
-summary = "FILL ME IN BABY"
-draft = true
+summary = "this will eventually have more stuff... i was making my website, so i made this too."
 +++
 
 <!-- when ready: title =  'what kind of care is pumping?' -->
