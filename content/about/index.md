@@ -11,9 +11,7 @@ Their art takes many forms, including video, code, and electronics. They questio
 They also do other things.
 
 -//-
-\
-\
-\
+
 \
 ![GENERIC_ERROR headshot](headshot.jpg)
 {class="headshot"}
