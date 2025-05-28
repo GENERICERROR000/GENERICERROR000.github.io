@@ -27,8 +27,8 @@ function handlePageLoad() {
 
     if (savedPosition) {
         const { x, y } = JSON.parse(savedPosition);
-        pointer.style.left = x;
         pointer.style.top = y;
+        pointer.style.left = x;
     }
 
     // make pointer visible not that it's set
