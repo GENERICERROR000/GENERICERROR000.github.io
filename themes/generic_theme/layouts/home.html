@@ -2,8 +2,10 @@
 {{ define "main" }}
   {{ $pages := where site.RegularPages "Type" "articles" }}
   {{ $paginator := .Paginate $pages }}
-  
-  {{ .Content }}
+
+  <div class="page-head">
+    {{ .Content }}
+  </div>
 
   {{ range (.Paginate .Pages).Pages }}
     <div class="section">

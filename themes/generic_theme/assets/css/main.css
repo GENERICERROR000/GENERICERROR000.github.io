@@ -187,16 +187,16 @@ time {
     margin-bottom: 10px;
 }
 
-.page p:first-of-type {
-    margin-top: 60px;
-}
-
 .page p {
     margin-top: 20px;
 }
 
 .page p a {
     color: var(--pink);
+}
+
+.page-head {
+    margin-bottom: 60px;
 }
 
 .credits {

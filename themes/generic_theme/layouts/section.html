@@ -1,5 +1,7 @@
 {{ define "main" }}
-  {{ .Content }}
+  <div class="page-head">
+    {{ .Content }}
+  </div>
   {{ range (.Paginate .Pages).Pages }}
     <div class="section">
       <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>

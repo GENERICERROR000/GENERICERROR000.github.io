@@ -11,7 +11,8 @@ this will eventually be my blog...
 i was making my website, so i made this too.
 
 \
-(✦⚈_⚈)▬▬▬☞ later babe 
+(✦⚈_⚈)▬▬▬☞ later babe
+{style="color: var(--green)"}
 
 \
 {{< image src=free_insulin_lispro.jpg title="free insulin" >}}
