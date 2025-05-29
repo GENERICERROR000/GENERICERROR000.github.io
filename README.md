@@ -1,6 +1,6 @@
 # GENERIC_ERROR_[B]LOG
 
-> like the website — but with more words
+> like the website — now with more words
 
 ## hosting
 
