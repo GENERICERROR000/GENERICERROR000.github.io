@@ -5,8 +5,7 @@ theme = "generic_theme"
 disableKinds = ["taxonomy", "term"]
 
 [pagination]
-    # pagerSize = 5
-    pagerSize = 2
+    pagerSize = 5
     path = "articles"
 
 [menus]

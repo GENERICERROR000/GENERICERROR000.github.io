@@ -1,5 +1,6 @@
 +++
 title = 'ABOUT'
+js = "index.js"
 [build]
     list = 'never'
 +++
