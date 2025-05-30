@@ -58,7 +58,6 @@ disableKinds = ["taxonomy", "term"]
         disable = true
         enableDNT = true
         simple = false
-
     [privacy.youtube]
         disable = true
         privacyEnhanced = true

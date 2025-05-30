@@ -9,5 +9,8 @@ currently hosted on github pages
 ## development
 
 ```zsh
-hugo server -D
+hugo server
+
+# for mobile
+IP="LOCAL_IP"; hugo server --bind "${IP}" --baseURL http://"${IP}" --port 8080
 ```

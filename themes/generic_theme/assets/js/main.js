@@ -12,7 +12,7 @@ function isMobile() {
 function handlePageLoad() {
     // save current position before leaving page
     window.onbeforeunload = () => {
-        const pointer = document.getElementsByClassName("pointer")[0];
+        const pointer = document.querySelectorAll(".pointer")[0];
         const lastPosition = JSON.stringify({
             x: pointer.style.left,
             y: pointer.style.top,
@@ -22,7 +22,7 @@ function handlePageLoad() {
     };
 
     // restore cursor position on page load (if previously set)
-    const pointer = document.getElementsByClassName("pointer")[0];
+    const pointer = document.querySelectorAll(".pointer")[0];
     const savedPosition = localStorage.getItem("lastCursorPosition");
 
     if (savedPosition) {
@@ -44,20 +44,20 @@ function handlePointer() {
         navigator.maxTouchPoints > 2;
 
     if (isMobile() || isIpad) {
-        const pointer = document.getElementsByClassName("pointer")[0];
+        const pointer = document.querySelectorAll(".pointer")[0];
         if (pointer) {
             pointer.style.visibility = "hidden";
             pointer.style.hidden = "true";
         }
     } else {
         document.addEventListener("mousemove", (event) => {
-            const el = document.getElementsByClassName("pointer")[0];
+            const el = document.querySelectorAll(".pointer")[0];
             el.style.top = event.clientY + "px";
             el.style.left = event.clientX + "px";
         });
 
         document.querySelector("body").addEventListener("mouseenter", () => {
-            const pointer = document.getElementsByClassName("pointer")[0];
+            const pointer = document.querySelectorAll(".pointer")[0];
             if (pointer) {
                 pointer.style.visibility = "visible";
                 pointer.style.hidden = "false";
@@ -65,7 +65,7 @@ function handlePointer() {
         });
 
         document.querySelector("body").addEventListener("mouseleave", () => {
-            const pointer = document.getElementsByClassName("pointer")[0];
+            const pointer = document.querySelectorAll(".pointer")[0];
             if (pointer) {
                 pointer.style.visibility = "hidden";
                 pointer.style.hidden = "true";
@@ -74,7 +74,7 @@ function handlePointer() {
 
         document.querySelectorAll(".pointer-hide").forEach((el) => {
             el.addEventListener("mouseenter", () => {
-                const pointer = document.getElementsByClassName("pointer")[0];
+                const pointer = document.querySelectorAll(".pointer")[0];
                 if (pointer) {
                     pointer.style.visibility = "hidden";
                     pointer.style.hidden = "true";
@@ -82,7 +82,7 @@ function handlePointer() {
             });
 
             el.addEventListener("mouseleave", () => {
-                const pointer = document.getElementsByClassName("pointer")[0];
+                const pointer = document.querySelectorAll(".pointer")[0];
                 if (pointer) {
                     pointer.style.visibility = "visible";
                     pointer.style.hidden = "false";

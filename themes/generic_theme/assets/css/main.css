@@ -228,14 +228,14 @@ time {
 
 .image-wrapper input[type="checkbox"]:checked ~ label > .image {
     display: block;
-    transform: translate(-50%, -50%);
-    width: 100%;
-    max-width: 60vw;
-    height: auto;
     position: fixed;
     top: 50%;
     left: 50%;
     margin-right: -50%;
+    height: auto;
+    width: 100%;
+    max-width: min(90vw, 80vh);
+    transform: translate(-50%, -50%);
     cursor: zoom-out;
     z-index: 920;
 }
@@ -298,11 +298,6 @@ time {
 
     .image {
         max-width: 80%;
-    }
-
-    .image-wrapper input[type="checkbox"]:checked ~ label > .image {
-        max-width: 95vw;
-
     }
 
     p.credits {
