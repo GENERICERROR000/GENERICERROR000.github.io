@@ -8,6 +8,11 @@
     --text: #cdbeb1; /* text color */
     --hover: #fc4040; /* hover color */
     --shadow: #000000d8; /* bg for zoomed images */
+
+    --padding: 1rem;
+    --margin: 1rem;
+    --small-margin: 0.8rem;
+    --large-margin: 1.2rem;
 }
 
 /* ---> GENERAL <--- */
@@ -20,13 +25,12 @@
 html,
 a {
     cursor: none !important;
-    /* cursor: url("/images/pointer.svg"), auto; */
 }
 
 body {
     min-height: 95.5vh;
     display: grid;
-    padding: 15px;
+    padding: var(--padding);
 
     color: var(--text);
     background-color: var(--black);
@@ -36,10 +40,10 @@ body {
 
     font-family: "Fira Code";
     font-style: normal;
-    line-height: 1.2;
+    line-height: 1.4;
 
-    grid-template-columns: repeat(2, fit-content(400px)) repeat(3, 1fr);
-    grid-template-rows: repeat(2, fit-content(300px)) repeat(3, 1fr);
+    grid-template-columns: repeat(2, fit-content(10rem)) repeat(3, 1fr);
+    grid-template-rows: repeat(2, fit-content(8rem)) repeat(3, 1fr);
     grid-column-gap: 0px;
     grid-row-gap: 0px;
     grid-template-areas:
@@ -62,9 +66,9 @@ code {
 
 header {
     grid-area: head;
-    margin-bottom: 15px;
-    margin-right: 15px;
-    padding: 15px;
+    margin-bottom: var(--margin);
+    margin-right: var(--margin);
+    padding: var(--padding);
     border: ridge;
     border-width: thick;
     border-color: var(--pink);
@@ -73,7 +77,7 @@ header {
 main {
     grid-area: main;
     max-width: 1200px;
-    padding: 15px;
+    padding: var(--padding);
     font-size: 1rem;
     font-weight: 400;
     border: ridge;
@@ -97,17 +101,13 @@ h1 {
 }
 
 h2 {
-    /* text-decoration-line: underline overline;
-    text-decoration-style: dotted;
-    text-decoration-thickness: .4rem;
-    text-decoration-thickness: 1000rem;
-    text-decoration-color: #ff94d125; */
+    font-size: 1.4rem;
 }
 
 main h2 a {
     text-decoration-style: double;
     text-decoration-line: underline;
-    text-decoration-thickness: 0.2rem;
+    text-decoration-thickness: 0.1rem;
 }
 
 /* ---> CURSOR <--- */
@@ -128,7 +128,7 @@ main h2 a {
 /* ---> MENU <--- */
 
 .site-logo {
-    padding-bottom: 20px;
+    padding-bottom: var(--padding);
 }
 
 .active {
@@ -136,11 +136,11 @@ main h2 a {
 }
 
 nav {
-    margin-top: 20px;
+    margin-top: var(--large-margin);
 }
 
 .nav {
-    margin-bottom: 10px;
+    margin-bottom: var(--small-margin);
     font-size: 1.2rem;
 }
 
@@ -162,20 +162,20 @@ time {
 }
 
 .section {
-    margin-top: 20px;
-    margin-bottom: 20px;
-    padding: 15px;
+    margin-top: var(--large-margin);
+    margin-bottom: var(--large-margin);
+    padding: var(--padding);
     border: ridge;
     border-width: thick;
     border-color: var(--pink);
 }
 
 .section h2 {
-    margin-bottom: 10px;
+    margin-bottom: var(--small-margin);
 }
 
 .section p {
-    margin-top: 20px;
+    margin-top: var(--large-margin);
 }
 
 .page {
@@ -184,54 +184,27 @@ time {
 }
 
 .page h1 {
-    margin-bottom: 10px;
+    margin-bottom: var(--small-margin);
 }
 
 .page p {
-    margin-top: 20px;
+    margin-top: var(--large-margin);
 }
 
 .page p a {
     color: var(--pink);
+    text-decoration-style: double;
+    text-decoration-line: underline;
+    text-decoration-thickness: 0.1rem;
 }
 
 .page-head {
-    margin-bottom: 60px;
+    margin-bottom: var(--margin);
 }
 
 .credits {
     position: absolute;
     bottom: 0;
-}
-
-/* ---> MOBILE <--- */
-
-@media only screen and (max-width: 1000px) {
-    body {
-        min-width: 500px;
-        grid-template-columns: 1fr;
-        grid-column-gap: 0px;
-        grid-row-gap: 0px;
-        grid-template-areas:
-            "head"
-            "head"
-            "main"
-            "main"
-            "main";
-    }
-
-    header {
-        margin-right: 0px;
-    }
-
-    .copyright {
-        margin-top: 20px;
-    }
-
-    p.credits {
-        position: relative;
-        margin-top: 40px;
-    }
 }
 
 /* ---> IMAGES <--- */
@@ -249,14 +222,16 @@ time {
     cursor: zoom-in;
 }
 
-.image-wrapper .show,
 .image-wrapper .shadow {
     display: none;
 }
 
-.image-wrapper input[type="checkbox"]:checked ~ label > .show {
+.image-wrapper input[type="checkbox"]:checked ~ label > .image {
     display: block;
-    transform: translate(-50%, -50%) scale(1.6);
+    transform: translate(-50%, -50%);
+    width: 100%;
+    max-width: 60vw;
+    height: auto;
     position: fixed;
     top: 50%;
     left: 50%;
@@ -281,4 +256,57 @@ time {
     width: 100vw;
     height: 100vh;
     background: var(--shadow);
+}
+
+/* ---> MOBILE <--- */
+
+@media only screen and (max-width: 1000px) {
+    :root {
+        --padding: 0.4rem;
+        --margin: 0.4rem;
+        --small-margin: 0.4rem;
+        --large-margin: 0.8rem;
+    }
+
+    body {
+        grid-template-columns: 1fr;
+        grid-column-gap: 0px;
+        grid-row-gap: 0px;
+        grid-template-areas:
+            "head"
+            "head"
+            "main"
+            "main"
+            "main";
+    }
+
+    header {
+        margin-right: 0px;
+    }
+
+    h1 {
+        font-size: 1.4rem;
+    }
+
+    h2 {
+        font-size: 1.2rem;
+    }
+
+    .copyright {
+        margin-top: 20px;
+    }
+
+    .image {
+        max-width: 80%;
+    }
+
+    .image-wrapper input[type="checkbox"]:checked ~ label > .image {
+        max-width: 95vw;
+
+    }
+
+    p.credits {
+        position: relative;
+        margin-top: 40px;
+    }
 }
