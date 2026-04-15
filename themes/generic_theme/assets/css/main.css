@@ -12,6 +12,7 @@
     --padding: 1rem;
     --margin: 1rem;
     --small-margin: 0.8rem;
+
     --large-margin: 1.2rem;
 }
 
@@ -20,11 +21,6 @@
 * {
     margin: 0;
     padding: 0;
-}
-
-html,
-a {
-    cursor: none !important;
 }
 
 /* 
@@ -37,8 +33,14 @@ html {
     display: flex;
     flex-direction: column;
 }
+
+html,
+a {
+    cursor: none !important;
+}
+
 body {
-    flex-grow: 1;
+    flex-grow: 1; /* make site fill page */
     display: grid;
     padding: var(--padding);
 
